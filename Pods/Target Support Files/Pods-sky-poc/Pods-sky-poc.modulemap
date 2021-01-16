@@ -1,6 +1,0 @@
-framework module Pods_sky_poc {
-  umbrella header "Pods-sky-poc-umbrella.h"
-
-  export *
-  module * { export * }
-}
