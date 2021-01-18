@@ -48,6 +48,7 @@ class MovieController: UIViewController{
         movieDescription.textAlignment = .justified
         banner.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/w1280/\(posterFilme)"), completed: nil)
         
+        
         view.backgroundColor = .systemYellow
 
         view.addSubview(banner)

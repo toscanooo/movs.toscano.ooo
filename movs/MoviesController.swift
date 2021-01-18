@@ -38,16 +38,16 @@ class MoviesController: UIViewController {
 
         view.backgroundColor = .systemYellow
         navigationItem.title = "Movs"
-        let bottomButton = UIButton(frame:CGRect(x: 20, y: 100, width: 100, height: 100))
+        let bottomButton = UIButton()
         bottomButton.backgroundColor = .gray
-        bottomButton.setTitle("clique aqui", for: .normal)
+    
         bottomButton.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         view.addSubview(bottomButton)
         view.addSubview(collectionView)
         collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -60,10 +60,6 @@ class MoviesController: UIViewController {
             data.remove(at: 0)
             for movie in movies {
                 data.append(CustomData(title: "\(movie.title!)", image: #imageLiteral(resourceName: "Icon-60@3x"), description: "\(movie.overview!)", url: "\(movie.poster_path!)"))
-                //https://image.tmdb.org/t/p/w220_and_h330_face
-                //https://image.tmdb.org/t/p/w1280/
-                
-                
             }
         }
     }
@@ -84,7 +80,7 @@ class MoviesController: UIViewController {
 extension MoviesController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2.1, height: collectionView.frame.width/1.5)
+        return CGSize(width: collectionView.frame.width/2.06, height: collectionView.frame.width/1.3)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
