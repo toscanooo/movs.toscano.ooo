@@ -21,7 +21,8 @@ class MovieController: UIViewController{
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.backgroundColor = .black
+        iv.backgroundColor = .white
+        iv.alpha = 0.3
         return iv
     }()
     
@@ -30,7 +31,7 @@ class MovieController: UIViewController{
     fileprivate let movieDescription: UITextView = {
         let uil = UITextView()
 
-        uil.backgroundColor = .systemYellow
+        uil.backgroundColor = .none
         uil.translatesAutoresizingMaskIntoConstraints = false
         uil.tintColor = .black
         uil.isEditable = false
@@ -44,7 +45,7 @@ class MovieController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        movieDescription.text = "\(nomedofilme.uppercased()) \n \(descricaofilme)"
+        movieDescription.text = "\(nomedofilme.uppercased())\n\(descricaofilme)"
         movieDescription.textAlignment = .justified
         banner.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/w1280/\(posterFilme)"), completed: nil)
         
@@ -53,15 +54,22 @@ class MovieController: UIViewController{
 
         view.addSubview(banner)
         
+        
+        //view.addSubview(banner)
+        //view.bringSubviewToFront(banner)
+
         //banner.contentMode = .scaleToFill
+        //view.autoresizingMask = [.flexibleWidth, .flexibleLeftMargin, .flexibleRightMargin]
+        banner.autoresizingMask = [ .flexibleWidth]
         banner.topAnchor.constraint(equalTo: view.topAnchor, constant:90).isActive = true
         banner.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         banner.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        banner.heightAnchor.constraint(equalToConstant: 562).isActive = true
+        //banner.heightAnchor.constraint(equalToConstant: 562).isActive = true
+        banner.heightAnchor.constraint(lessThanOrEqualTo: view.heightAnchor).isActive = true
         
         
         view.addSubview(movieDescription)
-        movieDescription.topAnchor.constraint(equalTo: banner.bottomAnchor).isActive = true
+        movieDescription.topAnchor.constraint(equalTo: view.topAnchor, constant: 90).isActive = true
         movieDescription.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         movieDescription.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
         movieDescription.heightAnchor.constraint(equalToConstant: 500).isActive = true
@@ -81,5 +89,16 @@ class MovieController: UIViewController{
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+extension UIImage {
+    func alpha(_ value:CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+                draw(at: CGPoint.zero, blendMode: .normal, alpha: value)
+                let newImage = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                return newImage!
     }
 }
