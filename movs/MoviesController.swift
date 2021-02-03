@@ -14,7 +14,7 @@ struct CustomData {
 
 class MoviesController: UIViewController {
 
-    var data = [CustomData(title:"filme1", image: #imageLiteral(resourceName: "Icon-40@3x"), description: "", url: "toscan.ooo"),]
+    var data = [CustomData(title:"filme1", image: #imageLiteral(resourceName: "Splash"), description: "", url: "toscan.ooo"),]
 
     private let collectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -59,7 +59,7 @@ class MoviesController: UIViewController {
             let movies = jsonMovies.results
             data.remove(at: 0)
             for movie in movies {
-                data.append(CustomData(title: "\(movie.title!)", image: #imageLiteral(resourceName: "Icon-60@3x"), description: "\(movie.overview!)", url: "\(movie.poster_path!)"))
+                data.append(CustomData(title: "\(movie.title!)", image: #imageLiteral(resourceName: "Splash"), description: "\(movie.overview!)", url: "\(movie.poster_path!)"))
             }
         }
     }

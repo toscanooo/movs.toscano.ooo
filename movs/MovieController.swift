@@ -48,16 +48,10 @@ class MovieController: UIViewController{
         movieDescription.text = "\(nomedofilme.uppercased())\n\(descricaofilme)"
         movieDescription.textAlignment = .justified
         banner.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/w1280/\(posterFilme)"), completed: nil)
-        
-        
         view.backgroundColor = .systemYellow
-
         view.addSubview(banner)
-        
-        
         //view.addSubview(banner)
         //view.bringSubviewToFront(banner)
-
         //banner.contentMode = .scaleToFill
         //view.autoresizingMask = [.flexibleWidth, .flexibleLeftMargin, .flexibleRightMargin]
         banner.autoresizingMask = [ .flexibleWidth]
@@ -66,8 +60,6 @@ class MovieController: UIViewController{
         banner.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         //banner.heightAnchor.constraint(equalToConstant: 562).isActive = true
         banner.heightAnchor.constraint(lessThanOrEqualTo: view.heightAnchor).isActive = true
-        
-        
         view.addSubview(movieDescription)
         movieDescription.topAnchor.constraint(equalTo: view.topAnchor, constant: 90).isActive = true
         movieDescription.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true

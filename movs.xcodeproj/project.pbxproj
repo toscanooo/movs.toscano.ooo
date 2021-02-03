@@ -10,7 +10,6 @@
 		02171F65258960D900CB5D0B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02171F64258960D900CB5D0B /* CustomCell.swift */; };
 		02171F68258962D000CB5D0B /* MoviesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02171F67258962D000CB5D0B /* MoviesData.swift */; };
 		0244F7F625B230050083D55A /* Pods_movs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0244F7F525B230050083D55A /* Pods_movs.framework */; };
-		0244F7F725B230050083D55A /* Pods_movs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0244F7F525B230050083D55A /* Pods_movs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		024B48F125801648007CBE21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B48F025801648007CBE21 /* AppDelegate.swift */; };
 		024B48F325801648007CBE21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B48F225801648007CBE21 /* SceneDelegate.swift */; };
 		024B48F525801648007CBE21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B48F425801648007CBE21 /* ViewController.swift */; };
@@ -23,20 +22,6 @@
 		029272EF25829F2A00D8DE62 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029272EE25829F2A00D8DE62 /* Movies.swift */; };
 		029272F32582A00500D8DE62 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029272F22582A00500D8DE62 /* Movie.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		0244F7F825B230050083D55A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0244F7F725B230050083D55A /* Pods_movs.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02171F64258960D900CB5D0B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -153,7 +138,6 @@
 				024B48EA25801648007CBE21 /* Frameworks */,
 				024B48EB25801648007CBE21 /* Resources */,
 				49CCD2A24AFDD84C95AE4316 /* [CP] Embed Pods Frameworks */,
-				0244F7F825B230050083D55A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
